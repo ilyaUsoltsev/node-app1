@@ -47,6 +47,12 @@ app.get('/about', (req,res)=>{
     });
 });
 
+app.get('/projects', (req,res)=>{
+    res.render('projects.hbs',{
+        title:'Awesome HBS'
+    });
+});
+
 app.listen(port, ()=>{
     console.log(`listening to ${port}`)
 });
