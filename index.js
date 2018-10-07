@@ -4,6 +4,8 @@ const fs = require('fs');
 
 let app = express();
 
+const port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + '/views/partials');
 
 hbs.registerHelper('getCurrentYear',()=>{
@@ -45,4 +47,6 @@ app.get('/about', (req,res)=>{
     });
 });
 
-app.listen(3000);
+app.listen(port, ()=>{
+    console.log(`listening to ${port}`)
+});
